@@ -20,7 +20,7 @@ namespace roteiro4_ex2
 • Porcentagem total (homens e mulheres) com experiência no serviço
 Faça um programa que calcule as informações para um total de 30 candidatos */
 
-            int i, qntM=0, qntH=0, somaiH=0 , somaiM=0, exp=0, Mexp=0, H35a45=0, menoriM=0, idade;
+            int i, qntM=0, qntH=0, somaiH=0 ,somaTidade=0, somaiM=0, exp=0, Mexp=0, H35a45=0, menoriM=0, idade;
             char sexo = ' ', experiencia = ' ';
             bool check=false;
             for (i = 0; i < 30; i++)
@@ -47,7 +47,7 @@ Faça um programa que calcule as informações para um total de 30 candidatos */
                             qntM++;
                         }
 
-                        Console.WriteLine("O candidato possui experiencia? [S] para Sim ou [N] para Não");
+                        Console.WriteLine("\nO candidato possui experiencia? [S] para Sim ou [N] para Não");
                         experiencia = char.Parse(Console.ReadLine().ToUpper());
 
                         if (!(experiencia.Equals('S') || experiencia.Equals('N')))
@@ -65,7 +65,7 @@ Faça um programa que calcule as informações para um total de 30 candidatos */
                             {
                                 Mexp++;
                             }
-                            Console.Write("Digite a idade do candidato: ");
+                            Console.Write("\nDigite a idade do candidato: ");
                             idade = int.Parse(Console.ReadLine());
 
                             if (idade <= 0)
@@ -75,6 +75,7 @@ Faça um programa que calcule as informações para um total de 30 candidatos */
                             }
                             else
                             {
+                                somaTidade += idade;
                                 if (sexo.Equals('M'))
                                 {
                                     somaiH += idade;
@@ -85,8 +86,9 @@ Faça um programa que calcule as informações para um total de 30 candidatos */
                                 }
                                 else if (sexo.Equals('F'))
                                 {
+                                    if (experiencia.Equals('S')) { }
                                     somaiM += idade;
-
+                                }
                                     if (i == 0) {
                                         menoriM = idade;
                                     }
@@ -113,7 +115,10 @@ Faça um programa que calcule as informações para um total de 30 candidatos */
 
                 i++;
             }
-            Console.WriteLine("");
+            Console.WriteLine("A quantidade de candidatos do sexo feminino é: "+qntM+" candidatas.");
+            Console.WriteLine("A quantidade de candidatos do sexo masculino é:"+qntH+" candidatos.");
+            Console.WriteLine("A idade média dos homens é:"+somaiH/qntH+" anos.");
+            Console.WriteLine("A idade média dos homens é:" + somaiH / qntH + " anos.");
 
 
 
