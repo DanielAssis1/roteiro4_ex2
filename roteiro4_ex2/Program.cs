@@ -33,7 +33,7 @@ Faça um programa que calcule as informações para um total de 30 candidatos */
 
                     if (!(sexo.Equals('M') || sexo.Equals('F')))
                     {
-                        Console.WriteLine("\nO valor digitado é inválido digite novamente");
+                        Console.WriteLine("\nO valor digitado é inválido. Digite novamente.");
                         check = true;
                     }
                     else
@@ -52,8 +52,15 @@ Faça um programa que calcule as informações para um total de 30 candidatos */
 
                         if (!(experiencia.Equals('S') || experiencia.Equals('N')))
                         {
-                            Console.WriteLine("\nO valor digitado é inválido digite novamente");
+                            Console.WriteLine("\nO valor digitado é inválido. Digite novamente.");
                             check = true;
+                            if (qntH > 0) {
+                                qntH--;
+                            }
+                            if(qntM > 0)
+                            {
+                                qntM--;
+                            }
                         }
                         else
                         {
@@ -70,8 +77,24 @@ Faça um programa que calcule as informações para um total de 30 candidatos */
 
                             if (idade <= 0)
                             {
-                                Console.WriteLine("\nO valor digitado é inválido digite novamente");
+                                Console.WriteLine("\nO valor digitado é inválido. Digite novamente.");
                                 check = true;
+                                if (qntH > 0)
+                                {
+                                    qntH--;
+                                }
+                                if (qntM > 0)
+                                {
+                                    qntM--;
+                                }
+                                if (exp > 0)
+                                {
+                                    exp--;
+                                }
+                                if (Mexp > 0)
+                                {
+                                    Mexp--;
+                                }
                             }
                             else
                             {
